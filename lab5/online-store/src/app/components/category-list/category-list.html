@@ -1,0 +1,11 @@
+<div class="category-list">
+  <button
+    class="category-button"
+    *ngFor="let category of categories"
+    type="button"
+    (click)="onSelect(category.id)"
+    [class.active]="category.id === selectedCategoryId"
+  >
+    {{ category.name }}
+  </button>
+</div>

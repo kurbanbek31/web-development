@@ -1,0 +1,29 @@
+<main class="main">
+  <nav class="category-nav">
+    <div class="category-list">
+      <button
+        class="category-button"
+        *ngFor="let category of categories"
+        type="button"
+        (click)="onCategorySelect(category.id)"
+        [class.active]="category.id === selectedCategoryId"
+      >
+        {{ category.name }}
+      </button>
+    </div>
+  </nav>
+
+  <section class="content">
+    <p class="empty-state" *ngIf="selectedCategoryId === null">
+      Select a category to see products.
+    </p>
+
+    <app-product-list
+      *ngIf="selectedCategoryId !== null"
+      [products]="filteredProducts"
+    ></app-product-list>
+  </section>
+</main>
+
+
+<router-outlet></router-outlet>

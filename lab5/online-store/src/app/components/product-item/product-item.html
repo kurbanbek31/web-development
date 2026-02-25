@@ -1,0 +1,36 @@
+<div class="product-card">
+  <a class="product-link" [href]="product.link" target="_blank">
+    <img [src]="product.images[0]" alt="" />
+    <h3>{{ product.name }}</h3>
+  </a>
+
+  <p>
+    {{ product.description | slice:0:200 }}
+    {{ product.description.length > 200 ? '...' : '' }}
+  </p>
+
+  <div class="meta">
+    <div class="price">{{ product.price }} ₸</div>
+    <div class="rating">★ {{ product.rating }}</div>
+  </div>
+
+  <div class="actions">
+    <button type="button" class="like" (click)="onLike()">❤ {{ product.likes }}</button>
+    <button type="button" class="delete" (click)="onDelete()">Delete</button>
+  </div>
+
+  <details class="share">
+    <summary>Share</summary>
+    <div class="share-content">
+      <a [href]="'https://wa.me/?text=' + encodeURIComponent('Check out this product: ' + product.link)" target="_blank">
+        WhatsApp
+      </a>
+      <a [href]="'https://t.me/share/url?url=' + encodeURIComponent(product.link) + '&text=' + encodeURIComponent(product.name)" target="_blank">
+        Telegram
+      </a>
+      <a [href]="product.link" target="_blank">
+        Kaspi
+      </a>
+    </div>
+  </details>
+</div>

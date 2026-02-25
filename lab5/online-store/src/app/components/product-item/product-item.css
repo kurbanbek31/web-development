@@ -1,0 +1,104 @@
+.product-card {
+  border: 1px solid #ddd;
+  border-radius: 10px;
+  padding: 15px;
+  background: white;
+  transition: transform 0.2s ease;
+  color: black;
+  text-decoration: none;
+}
+
+.product-card a {
+  text-decoration: none;
+  color: inherit;
+  font-family: sans-serif;
+  display: block;
+}
+
+.product-card:hover {
+  transform: scale(1.02);
+}
+
+.product-card img {
+  display: block;
+  margin: 0 auto;
+  height: 200px;
+  object-fit: cover;
+}
+
+.product-card p {
+  overflow: hidden;
+  text-overflow: ellipsis;
+  display: -webkit-box;
+  -webkit-box-orient: vertical;
+}
+
+.meta {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  gap: 8px;
+}
+
+.price {
+  font-size: 1.2em;
+  font-weight: bold;
+  margin-top: 10px;
+}
+
+.rating {
+  font-weight: 600;
+}
+
+.actions {
+  display: flex;
+  gap: 8px;
+  margin-top: 10px;
+}
+
+.actions button {
+  border: 1px solid #d3d3d3;
+  background: #ffffff;
+  color: #222;
+  padding: 6px 10px;
+  border-radius: 6px;
+  cursor: pointer;
+}
+
+.actions button:hover {
+  border-color: #b6b6b6;
+  background: #f6f6f6;
+}
+
+.actions .delete {
+  border-color: #d55;
+  color: #b00;
+}
+
+.actions .delete:hover {
+  background: #ffecec;
+}
+
+.share {
+  margin-top: 8px;
+}
+
+.share summary {
+  cursor: pointer;
+  user-select: none;
+  font-weight: 600;
+}
+
+.share-content {
+  margin-top: 8px;
+  background-color: #f9f9f9;
+  min-width: 130px;
+  box-shadow: 0px 8px 16px 0px rgba(0,0,0,0.2);
+  padding: 8px 12px;
+  border-radius: 6px;
+}
+
+.share-content a {
+  display: block;
+  padding: 6px 0;
+}
