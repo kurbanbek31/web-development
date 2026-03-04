@@ -1,0 +1,15 @@
+<h2>Album Photos</h2>
+
+<div *ngIf="loading">Loading...</div>
+<div *ngIf="error">{{ error }}</div>
+
+<div class="grid" *ngIf="!loading && !error">
+  <div class="photo" *ngFor="let p of photos">
+    <img [src]="p.thumbnailUrl" [alt]="p.title" />
+    <div class="title">{{ p.title }}</div>
+  </div>
+</div>
+
+<div *ngIf="!loading && !error && photos.length === 0">No photos</div>
+
+<button class="btn" (click)="back()">Back</button>
